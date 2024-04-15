@@ -49,25 +49,45 @@ $hotels = [
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PHP Hotel</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css' integrity='sha512-VcyUgkobcyhqQl74HS1TcTMnLEfdfX6BbjhH8ZBjFU9YTwHwtoRtWSGzhpDVEJqtMlvLM2z3JIixUOu63PNCYQ==' crossorigin='anonymous' />
 </head>
 
 <body>
 
-  <div>
-    <ul>
-      <?php
-      foreach ($hotels as $hotel) : {
-          $name = $hotel['name'];
-          $description = $hotel['description'];
-          $parking =  $hotel['parking'];
-          $vote = $hotel['vote'];
-          $distance_to_center = $hotel['distance_to_center'];
-        }
-      ?>
-        <li>Nome Hotel:<?php echo $name ?>, Descrizione: <?php echo $description ?>, Parcheggio: <?php echo $parking ?>, Voto:<?php echo $vote ?>, Distanza dal centro:<?php echo $distance_to_center ?> </li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrizione</th>
+        <th scope="col">Parcheggio</th>
+        <th scope="col">Voto</th>
+        <th scope="col">Distanza dal centro</th>
+      </tr>
+    </thead>
+    <?php
+    foreach ($hotels as $hotel) : {
+        $name = $hotel['name'];
+        $description = $hotel['description'];
+        $parking =  $hotel['parking'];
+        $vote = $hotel['vote'];
+        $distance_to_center = $hotel['distance_to_center'];
+      }
+    ?>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td><?php echo $name ?></td>
+          <td><?php echo $description ?></td>
+          <td><?php echo $parking ?></td>
+          <td><?php echo $vote ?></td>
+          <td><?php echo $distance_to_center ?></td>
+        </tr>
+      </tbody>
+    <?php endforeach; ?>
+  </table>
+
 
 </body>
 
