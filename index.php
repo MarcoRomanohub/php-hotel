@@ -70,7 +70,7 @@ $hotels = [
     foreach ($hotels as $hotel) : {
         $name = $hotel['name'];
         $description = $hotel['description'];
-        $parking =  $hotel['parking'];
+        $parking =  $hotel['parking'] ? 'si' : 'no';
         $vote = $hotel['vote'];
         $distance_to_center = $hotel['distance_to_center'];
       }
@@ -82,7 +82,7 @@ $hotels = [
           <td><?php echo $description ?></td>
           <td><?php echo $parking ?></td>
           <td><?php echo $vote ?></td>
-          <td><?php echo $distance_to_center ?></td>
+          <td><?php echo $distance_to_center ?> km</td>
         </tr>
       </tbody>
     <?php endforeach; ?>
